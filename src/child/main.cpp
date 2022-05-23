@@ -10,13 +10,15 @@ ChildProcess cp;
 void SignalHandler(int signum){
     std::cout << "Interrupt signal (" << signum << ") received.\n";
     cp.fileWrite();
-    std::cout << "Program gracefully finished!" << std::endl;
+    std::cout << "Program gracefully finished!\n";
     exit(signum);  
 }
 
 
 int main(int argc, char *argv[])
 {
+    std::cout << "Starting \"Child\" process" << std::endl;
+
     std::signal(SIGINT, SignalHandler);
     std::signal(SIGTERM, SignalHandler);  
     try
@@ -46,6 +48,7 @@ int main(int argc, char *argv[])
     while(1)
     {
         cp.counterIncrease();
+        std::cout << cp.getCounter() << "\n";
         const std::chrono::milliseconds period(input);
         std::this_thread::sleep_for(period);
     }  

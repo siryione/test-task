@@ -9,7 +9,8 @@
 
 
 int main(int argc, char const *argv[])
-{
+{   
+    std::cout << "Starting \"Parent\" process" << std::endl;
     namespace po = boost::program_options;
 
     po::options_description desc("Allowed options");
@@ -36,6 +37,7 @@ int main(int argc, char const *argv[])
     {
         std::cout << "Counter increase period was not set.\n";
     }
+    
     while(1)
     {
         boost::process::system(boost::process::exe="./child", boost::process::args={std::to_string(period)});

@@ -10,6 +10,8 @@ ChildProcess::~ChildProcess()
     file.close();
 }
 
+int ChildProcess::getCounter() {return counter;}
+
 void ChildProcess::setCounter(int c) {counter = c;}
 
 void ChildProcess::fileWrite()

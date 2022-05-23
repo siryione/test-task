@@ -13,6 +13,7 @@ public:
     void counterIncrease();
     void fileWrite();
     int fileRead();
+    int getCounter();
     void setCounter(int c);
     ~ChildProcess();
 };

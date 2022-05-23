@@ -28,3 +28,7 @@ cd bin/
 * `--period` -- set counter increase period.
 
 `./parent` _will run with default=1000ms period value_
+
+## Example of execution
+
+![alt-text](https://github.com/siryione/test-task/blob/main/src/common/images/execution_example.jpg)
